@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Mobitrans">
+  <DataContextMoniker Name="/MobitransDataContext" />
+  <nestedChildShapes>
+    <classShape Id="eddd988b-92fa-4a00-83db-f4253e67f366" absoluteBounds="4.75, 4.625, 2, 1.75354248046875">
+      <DataClassMoniker Name="/MobitransDataContext/ML_App_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a589bf0-a337-4af8-b1b3-93d75cadf18a" absoluteBounds="4.765, 5.085, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
