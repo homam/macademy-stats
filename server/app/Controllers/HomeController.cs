@@ -91,20 +91,31 @@ namespace server.Controllers
 
         public JsonResult TrialChapterVists(DateTime? from = null, DateTime? to = null)
         {
-            return Exec<ViewCount>("~/App_Data/users-visited-trial-chapter.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/users-visited-trial-chapter.sql", from, to);
         }
 
-        public JsonResult TrialChapterVistsByBuyers(DateTime? from = null, DateTime? to = null)
+        public JsonResult TrialChapterVisitsByBuyers(DateTime? from = null, DateTime? to = null)
         {
-            return Exec<ViewCount>("~/App_Data/buyers-visited-trial-chapter.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/buyers-visited-trial-chapter.sql", from, to);
         }
 
         public JsonResult QuickStats(DateTime? from = null, DateTime? to = null)
         {
-            return Exec<ViewCount>("~/App_Data/quick-stats.sql", from, to);
+            return Exec<QuickStats>("~/App_Data/quick-stats.sql", from, to);
         }
   
 
+
+    }
+
+    public class QuickStats
+    {
+        public QuickStats() { }
+        public int Visits { get; set; }
+        public int Users { get; set; }
+        public int RegisteredUsers { get; set; }
+        public int FacebookConnects { get; set; }
+        public int Purchases { get; set; }
 
     }
 
