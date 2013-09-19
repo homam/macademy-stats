@@ -46,6 +46,53 @@ require ['../../chart-modules/bar/chart.js',
 (barChart, pieChart, tooltip) ->
 
   charts = []
+
+  charts.push {
+    api: "http://stats.macademy.com/Home/QuickStats"
+    render: (stats) ->
+      ['Visits', 'Users', 'Purchases'].forEach (i) ->
+        $("#QuickStats [data-raw] [data-"+i+"]").text(d3.format(',f') stats[i])
+        $("#QuickStats [data-ratio] [data-"+i+"]").text(d3.format('.2p') stats[i]/stats.Visits )
+    update: (from, to) ->
+      self = this
+      api = this.api + "?from=#{from}&to=#{to}"
+      cache = GetCacheItem api
+      if cache.isValid()
+        self.render cache.data
+      else
+        d3.json api, (stats) ->
+          cache.setData stats[0]
+          self.render stats[0]
+  }
+
+  # Trial Chapter Used by
+  charts.push new Chart(
+    "http://stats.macademy.com/Home/TrialChapterVisits",
+    "#UsersTrialChapterVisits",
+    (->  pieChart().margin({right:120}).width(300).height(300)
+    .colors(d3.scale.category10())),
+  (raw) ->
+    d = raw[0]
+    return [
+      {name: 'Visited Trial Chapter', value: d['Visits']}
+      {name: '', value: d['Users'] - d['Visits']}
+    ]
+  )
+
+  # Buyers that Visited Trial Chapter before Purchase
+  charts.push new Chart(
+    "http://stats.macademy.com/Home/TrialChapterVisitsByBuyers",
+    "#BuyersTrialChapterVisits",
+    (->  pieChart().margin({right:120}).width(300).height(300)
+    .colors(d3.scale.category10())),
+  (raw) ->
+    d = raw[0]
+    return [
+      {name: 'Visited Trial Chapter', value: d['Visits']}
+      {name: '', value: d['Users'] - d['Visits']}
+    ]
+  )
+
   # Funnel
   charts.push new Chart(
     "http://stats.macademy.com/Home/IapEventsPerUser",

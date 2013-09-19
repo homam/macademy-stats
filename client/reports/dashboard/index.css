@@ -153,9 +153,19 @@ rect.Failures {
 .wrapper section {
   padding-bottom: 10px;
 }
-.wrapper section#IapEventsPerUser {
+.wrapper > div:first-child {
   position: relative;
   padding-top: 50px;
+}
+.wrapper .data-table {
+  text-align: center;
+  width: 400px;
+  margin: auto;
+  font-size: 150%;
+}
+.wrapper .data-table th {
+  font-weight: normal;
+  font-size: 70%;
 }
 .wrapper .fiftyFifty:after {
   content: '';
