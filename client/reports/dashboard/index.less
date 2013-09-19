@@ -123,8 +123,7 @@ rect.Failures {
         height: 25px;
 
         &.hover {
-          border-color: darken(@standardBlue, 20%);
-          background: #ddd;
+          background: #fff;
           color: @standardBlue;
         }
       }
@@ -186,17 +185,51 @@ rect.Failures {
   & > div:first-child
   {
     position: relative;
-    padding-top: 50px;
+    padding-top: 70px;
   }
 
   .data-table {
     text-align: center;
-    width: 400px;
+    width: 550px;
     margin:auto;
     font-size: 150%;
     th {
+      font-weight: 100;
+      padding: 5px 10px;
+    }
+    td {
       font-weight: normal;
-      font-size: 70%;
+      font-size: 75%;
+      padding: 10px 0;
+      color: #333;
+      background: #c1d8fe;
+      cursor: default;
+
+      &:hover {
+        color: #fff;
+        background: #124191;
+      }
+    }
+    tr:first-child td:first-child {
+      -webkit-border-top-left-radius: 5px;
+      -moz-border-radius-topleft: 5px;
+      border-top-left-radius: 5px;
+    }
+    tr:first-child td:last-child {
+      -webkit-border-top-right-radius: 5px;
+      -moz-border-radius-topright: 5px;
+      border-top-right-radius: 5px;
+    }
+    tr:last-child td:first-child {
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-left-radius: 5px;
+      background: lighten(#c1d8fe, 10%); //remove if needed
+    }
+    tr:last-child td:last-child {
+      -webkit-border-bottom-right-radius: 5px;
+      -moz-border-radius-bottomright: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 

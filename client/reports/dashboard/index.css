@@ -107,8 +107,7 @@ rect.Failures {
   height: 25px;
 }
 .header #date-controls input.windowsPhoneStyleBtns.hover {
-  border-color: #071836;
-  background: #ddd;
+  background: #fff;
   color: #124191;
 }
 .header #date-controls .dateToday {
@@ -155,17 +154,50 @@ rect.Failures {
 }
 .wrapper > div:first-child {
   position: relative;
-  padding-top: 50px;
+  padding-top: 70px;
 }
 .wrapper .data-table {
   text-align: center;
-  width: 400px;
+  width: 550px;
   margin: auto;
   font-size: 150%;
 }
 .wrapper .data-table th {
+  font-weight: 100;
+  padding: 5px 10px;
+}
+.wrapper .data-table td {
   font-weight: normal;
-  font-size: 70%;
+  font-size: 75%;
+  padding: 10px 0;
+  color: #333;
+  background: #c1d8fe;
+  cursor: default;
+}
+.wrapper .data-table td:hover {
+  color: #fff;
+  background: #124191;
+}
+.wrapper .data-table tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+}
+.wrapper .data-table tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+}
+.wrapper .data-table tr:last-child td:first-child {
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  background: #f3f8ff;
+}
+.wrapper .data-table tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
 }
 .wrapper .fiftyFifty:after {
   content: '';
