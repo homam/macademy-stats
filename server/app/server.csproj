@@ -131,7 +131,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -150,6 +149,9 @@
   <ItemGroup>
     <Content Include="App_Data\appuser-at-purchase.sql" />
     <Content Include="App_Data\appuser-sources.sql" />
+    <Content Include="App_Data\buyers-visited-trial-chapter.sql" />
+    <Content Include="App_Data\quick-stats.sql" />
+    <Content Include="App_Data\users-visited-trial-chapter.sql" />
     <Content Include="App_Data\_connectionString.txt" />
     <Content Include="App_Data\iap-events-per-user.sql" />
     <Content Include="App_Data\iap-requests-before-purchase-histogram.sql" />

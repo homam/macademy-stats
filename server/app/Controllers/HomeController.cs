@@ -87,7 +87,24 @@ namespace server.Controllers
         public JsonResult ViewOfPurchase(DateTime? from = null, DateTime? to = null)
         {
             return Exec<ViewCount>("~/App_Data/view-of-purchase.sql", from, to);
-        }  
+        }
+
+        public JsonResult TrialChapterVists(DateTime? from = null, DateTime? to = null)
+        {
+            return Exec<ViewCount>("~/App_Data/users-visited-trial-chapter.sql", from, to);
+        }
+
+        public JsonResult TrialChapterVistsByBuyers(DateTime? from = null, DateTime? to = null)
+        {
+            return Exec<ViewCount>("~/App_Data/buyers-visited-trial-chapter.sql", from, to);
+        }
+
+        public JsonResult QuickStats(DateTime? from = null, DateTime? to = null)
+        {
+            return Exec<ViewCount>("~/App_Data/quick-stats.sql", from, to);
+        }
+  
+
 
     }
 
