@@ -89,7 +89,7 @@ namespace server.Controllers
             return Exec<ViewCount>("~/App_Data/view-of-purchase.sql", from, to);
         }
 
-        public JsonResult TrialChapterVists(DateTime? from = null, DateTime? to = null)
+        public JsonResult TrialChapterVisits(DateTime? from = null, DateTime? to = null)
         {
             return Exec<VisitsUsers>("~/App_Data/users-visited-trial-chapter.sql", from, to);
         }
