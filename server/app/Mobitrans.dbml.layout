@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Mobitrans">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9" name="Mobitrans">
   <DataContextMoniker Name="/MobitransDataContext" />
   <nestedChildShapes>
-    <classShape Id="eddd988b-92fa-4a00-83db-f4253e67f366" absoluteBounds="4.75, 4.625, 2, 1.75354248046875">
+    <classShape Id="eddd988b-92fa-4a00-83db-f4253e67f366" absoluteBounds="4.75, 4.625, 2, 1.9631982421874996">
       <DataClassMoniker Name="/MobitransDataContext/ML_App_User" />
       <nestedChildShapes>
-        <elementListCompartment Id="3a589bf0-a337-4af8-b1b3-93d75cadf18a" absoluteBounds="4.765, 5.085, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3a589bf0-a337-4af8-b1b3-93d75cadf18a" absoluteBounds="4.765, 5.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d079bb75-486b-452a-86e2-8acdd508ebbc" absoluteBounds="1.375, 5.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/MobitransDataContext/MobiSpy_Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6472352-ad6e-4a6f-a893-5d45f780ccac" absoluteBounds="1.3899999999999997, 6.0850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

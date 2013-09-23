@@ -8,7 +8,7 @@ namespace server.Controllers
 {
     public class HomeController : Controller
     {
-        string _ConnectionString;
+        volatile string _ConnectionString;
         public string ConnectionString
         {
             get
