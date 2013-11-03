@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Mobitrans" Class="MobitransDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=172.30.0.165;Initial Catalog=Mobitrans;Persist Security Info=True;User ID=homam" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MobitransConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ML_App_User" Member="ML_App_Users">
     <Type Name="ML_App_User">
       <Column Name="AppUserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,6 +7,22 @@
       <Column Name="DataSource" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Data" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MobiSpy_Events" Member="MobiSpy_Events">
+    <Type Name="MobiSpy_Event">
+      <Column Name="eventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="appId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sessionId" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="viewId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UAId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="endPoint" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="ip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eventType" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="eventArgs" Type="System.String" DbType="NChar(1024)" CanBeNull="true" />
+      <Column Name="creationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="Char(2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

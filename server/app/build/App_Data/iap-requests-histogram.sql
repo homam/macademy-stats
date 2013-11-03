@@ -2,6 +2,7 @@
 
 DECLARE @from DATETIME = '{from}';
 DECLARE @to DATETIME = '{to}';
+DECLARE @appid INT = {appid};
 
 WITH T AS (
 	SELECT DISTINCT userId,
@@ -10,7 +11,7 @@ WITH T AS (
 			AND V.eventType = 'IAP-Requested'
 			) AS [Requests]
 	FROM dbo.MobiSpy_Events E
-	WHERE E.appId = 7 AND ip <> '80.227.47.62' AND creationTime > @from AND creationTime < @to
+	WHERE E.appId = @appid AND ip <> '80.227.47.62' AND creationTime > @from AND creationTime < @to
 )
 
 SELECT [Requests], COUNT(*) AS Users FROM T GROUP BY [Requests]

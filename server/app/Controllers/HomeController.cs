@@ -28,13 +28,15 @@ namespace server.Controllers
             return View();
         }
 
-        JsonResult Exec<T>(string queryFileName, DateTime? from, DateTime? to)
+        JsonResult Exec<T>(string queryFileName, int appId, DateTime? from, DateTime? to)
         {
             var fromValue = from ?? new DateTime(2013, 9, 12, 16, 0, 0);
             var toValue = to ?? DateTime.Now;
 
             var query = System.IO.File.ReadAllText(Server.MapPath(queryFileName));
-            query = query.Replace("{from}", fromValue.ToString("yyyy-MM-dd HH:mm:ss"))
+            query = query
+                .Replace("{appid}", appId.ToString())
+                .Replace("{from}", fromValue.ToString("yyyy-MM-dd HH:mm:ss"))
                 .Replace("{to}", toValue.ToString("yyyy-MM-dd HH:mm:ss"));
 
             using (var dx = new MobitransDataContext(ConnectionString))
@@ -49,59 +51,59 @@ namespace server.Controllers
             return Json(new {from = from.ToString("yyyy-MM-dd HH:mm:ss")}, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult UsageAfterPurchase(DateTime? from = null, DateTime? to = null)
+        public JsonResult UsageAfterPurchase(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<VisitsUsers>("~/App_Data/usage-after-purchase.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/usage-after-purchase.sql", appId, from, to);
         }
 
-        public JsonResult IapEventsPerUser(DateTime? from = null, DateTime? to = null)
+        public JsonResult IapEventsPerUser(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<IAPEvent>("~/App_Data/iap-events-per-user.sql", from, to);
+            return Exec<IAPEvent>("~/App_Data/iap-events-per-user.sql", appId, from, to);
         }
 
-        public JsonResult IapRequestsHistogram(DateTime? from = null, DateTime? to = null)
+        public JsonResult IapRequestsHistogram(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<RequestsUsers>("~/App_Data/iap-requests-histogram.sql", from, to);
+            return Exec<RequestsUsers>("~/App_Data/iap-requests-histogram.sql", appId, from, to);
         }
 
-        public JsonResult IapRequestsBeforePurchaseHistogram(DateTime? from = null, DateTime? to = null)
+        public JsonResult IapRequestsBeforePurchaseHistogram(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<RequestsUsers>("~/App_Data/iap-requests-before-purchase-histogram.sql", from, to);
+            return Exec<RequestsUsers>("~/App_Data/iap-requests-before-purchase-histogram.sql", appId, from, to);
         }
 
-        public JsonResult VisitsBeforePurchaseHistogram(DateTime? from = null, DateTime? to = null)
+        public JsonResult VisitsBeforePurchaseHistogram(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<VisitsUsers>("~/App_Data/visits-before-purchase-histogram.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/visits-before-purchase-histogram.sql", appId, from, to);
         }
 
-        public JsonResult AppUsersSourcesAtPurchase(DateTime? from = null, DateTime? to = null)
+        public JsonResult AppUsersSourcesAtPurchase(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<SourceUsers>("~/App_Data/appuser-at-purchase.sql", from, to);
+            return Exec<SourceUsers>("~/App_Data/appuser-at-purchase.sql", appId, from, to);
         }
 
-        public JsonResult AppUsersSources(DateTime? from = null, DateTime? to = null)
+        public JsonResult AppUsersSources(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<SourceUsers>("~/App_Data/appuser-sources.sql", from, to);
+            return Exec<SourceUsers>("~/App_Data/appuser-sources.sql", appId, from, to);
         }
 
-        public JsonResult ViewOfPurchase(DateTime? from = null, DateTime? to = null)
+        public JsonResult ViewOfPurchase(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<ViewCount>("~/App_Data/view-of-purchase.sql", from, to);
+            return Exec<ViewCount>("~/App_Data/view-of-purchase.sql", appId, from, to);
         }
 
-        public JsonResult TrialChapterVisits(DateTime? from = null, DateTime? to = null)
+        public JsonResult TrialChapterVisits(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<VisitsUsers>("~/App_Data/users-visited-trial-chapter.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/users-visited-trial-chapter.sql", appId, from, to);
         }
 
-        public JsonResult TrialChapterVisitsByBuyers(DateTime? from = null, DateTime? to = null)
+        public JsonResult TrialChapterVisitsByBuyers(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<VisitsUsers>("~/App_Data/buyers-visited-trial-chapter.sql", from, to);
+            return Exec<VisitsUsers>("~/App_Data/buyers-visited-trial-chapter.sql", appId, from, to);
         }
 
-        public JsonResult QuickStats(DateTime? from = null, DateTime? to = null)
+        public JsonResult QuickStats(int appId = 11, DateTime? from = null, DateTime? to = null)
         {
-            return Exec<QuickStats>("~/App_Data/quick-stats.sql", from, to);
+            return Exec<QuickStats>("~/App_Data/quick-stats.sql", appId, from, to);
         }
   
 

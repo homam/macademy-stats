@@ -2,11 +2,12 @@
 
 DECLARE @from DATETIME = '{from}';
 DECLARE @to DATETIME = '{to}';
+DECLARE @appid INT = {appid};
 
 
 WITH T AS (
 	SELECT E.userId, E.eventType FROM dbo.MobiSpy_Events E 
-	WHERE E.appId = 7 AND E.ip <> '80.227.47.62' AND
+	WHERE E.appId = @appid AND E.ip <> '80.227.47.62' AND
 	E.creationTime > @from AND E.creationTime < @to
 ),
 
